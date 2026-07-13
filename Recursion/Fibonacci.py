@@ -1,9 +1,13 @@
+memo={}
 def Fibonacci(num):
-    if num==0:
-        return 0
-    elif num==1:
-        return 1
-    return Fibonacci(num-1)+Fibonacci(num-2)
+    if num<=1:
+        return num
+    if num in memo:
+        return memo[num]
+    else:
+        fibo=Fibonacci(num-1)+Fibonacci(num-2)
+        memo[num]=fibo
+    return fibo
 def printFib(num):
     l=[]
     for fib in range(num+1):
