@@ -26,6 +26,8 @@ I am building this repository while learning DSA step by step, focusing on under
 - Factorial
 - Fibonacci
 - Memoization (Dynamic Programming Introduction)
+
+### Data Structures
 - Stack
 - Queue
 - Linked List
