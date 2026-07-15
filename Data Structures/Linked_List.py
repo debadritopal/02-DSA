@@ -107,7 +107,47 @@ class LinkedList:
             previous=current
             current=next_node
         self.head=previous
-        print("Linked List reversed succesfully")
+        print("Linked List reversed successfully")
+    def find_middle(self):
+        if self.head is None:
+            print("Linked List Underflow")
+            return
+        fast=self.head
+        slow=self.head
+        while fast is not None and fast.next is not None:
+            slow=slow.next
+            fast=fast.next.next
+        print(f"Middle value: {slow.data}")
+    def create_cycle(self,pos):
+        if self.head is None:
+            print("Linked List Underflow")
+            return
+        if pos<1:
+            print("Invalid Position")
+            return
+        current=self.head
+        count=1
+        while current is not None and count<pos:
+            current=current.next
+            count+=1
+        target=current
+        if current is None:
+            print("Invalid position")
+            return
+        current=self.head
+        while current.next is not None:
+            current=current.next
+        current.next=target
+        print("Loop Created")
+    def detect_cycle(self):
+        fast=self.head
+        slow=self.head
+        while fast is not None and fast.next is not None:
+            slow=slow.next
+            fast=fast.next.next
+            if slow is fast:
+                return True
+        return False
     def display(self):
         current=self.head
         print("Head-->",end='')
@@ -120,7 +160,7 @@ while True:
     try:
         line="="*40
         print(f"{line}\nWelcome to Linked List!\n{line}\n")
-        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete Element from beginning\n4. Delete Element from end\n5. Search Element\n6. Insert at a position\n7. Delete by Value\n8. Reverse Linked List\n9. View Linked List\n10. Exit")
+        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete Element from beginning\n4. Delete Element from end\n5. Search Element\n6. Insert at a position\n7. Delete by Value\n8. Reverse Linked List\n9. View Middle Element\n10. Create Cycle\n11. Detect Cycle\n12. View Linked List\n13. Exit")
         ch=int(input("Enter choice: "))
         if ch==1:
             num=int(input("Enter number: "))
@@ -145,8 +185,18 @@ while True:
         elif ch==8:
             l.reverse()
         elif ch==9:
-            l.display()
+            l.find_middle()
         elif ch==10:
+            pos=int(input("Enter position: "))
+            l.create_cycle(pos)
+        elif ch==11:
+            if l.detect_cycle():
+                print("Linked List contains a cycle")
+            else:
+                print("Linked list doesn't contain a cycle")
+        elif ch==12:
+            l.display()
+        elif ch==13:
             print("Exiting....")
             break
         else:
