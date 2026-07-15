@@ -76,6 +76,25 @@ class LinkedList:
             new_node.next=current.next
             current.next=new_node
             print(f"{num} successfully added at position {pos}")
+    def delete_by_value(self,num):
+        if self.head is None:
+            print("Linked List Underflow")
+            return
+        elif self.head.data==num:
+            self.delete_from_beginning()
+            return
+        else:
+            current=self.head
+            while current.next is not None:
+                if current.next.data==num:
+                    deleted=current.next.data
+                    current.next=current.next.next
+                    print(f"{deleted} has been successfully deleted")
+                    return
+                current=current.next
+            if current.next is None:
+                print("No such value exists")
+                return
     def display(self):
         current=self.head
         print("Head-->",end='')
@@ -88,7 +107,7 @@ while True:
     try:
         line="="*40
         print(f"{line}\nWelcome to Linked List!\n{line}\n")
-        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete element from beginning\n4. Delete element from end\n5. Search Element\n6. Insert at a position\n7. View Linked List\n8. Exit")
+        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete Element from beginning\n4. Delete Element from end\n5. Search Element\n6. Insert at a position\n7. Delete by Value\n8. View Linked List\n9. Exit")
         ch=int(input("Enter choice: "))
         if ch==1:
             num=int(input("Enter number: "))
@@ -108,8 +127,11 @@ while True:
             pos=int(input("Enter position: "))
             l.insert_at_position(num,pos)
         elif ch==7:
-            l.display()
+            num=int(input("Enter value to be deleted: "))
+            l.delete_by_value(num)
         elif ch==8:
+            l.display()
+        elif ch==9:
             print("Exiting....")
             break
         else:
