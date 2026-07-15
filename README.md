@@ -26,12 +26,11 @@ I am building this repository while learning DSA step by step, focusing on under
 - Factorial
 - Fibonacci
 - Memoization (Dynamic Programming Introduction)
-
-## 🚧 Upcoming Topics
-
 - Stack
 - Queue
 - Linked List
+
+## 🚧 Upcoming Topics
 - Trees
 - Graphs
 - Hash Tables
