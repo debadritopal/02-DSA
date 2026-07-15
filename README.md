@@ -30,7 +30,7 @@ I am building this repository while learning DSA step by step, focusing on under
 ### Data Structures
 - Stack
 - Queue
-- Linked List
+- Single Linked List
 
 ## 🚧 Upcoming Topics
 - Trees
