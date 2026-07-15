@@ -95,6 +95,19 @@ class LinkedList:
             if current.next is None:
                 print("No such value exists")
                 return
+    def reverse(self):
+        if self.head is None:
+            print("Linked List Underflow")
+            return
+        current=self.head
+        previous=None
+        while current is not None:
+            next_node=current.next
+            current.next=previous
+            previous=current
+            current=next_node
+        self.head=previous
+        print("Linked List reversed succesfully")
     def display(self):
         current=self.head
         print("Head-->",end='')
@@ -107,7 +120,7 @@ while True:
     try:
         line="="*40
         print(f"{line}\nWelcome to Linked List!\n{line}\n")
-        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete Element from beginning\n4. Delete Element from end\n5. Search Element\n6. Insert at a position\n7. Delete by Value\n8. View Linked List\n9. Exit")
+        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete Element from beginning\n4. Delete Element from end\n5. Search Element\n6. Insert at a position\n7. Delete by Value\n8. Reverse Linked List\n9. View Linked List\n10. Exit")
         ch=int(input("Enter choice: "))
         if ch==1:
             num=int(input("Enter number: "))
@@ -130,8 +143,10 @@ while True:
             num=int(input("Enter value to be deleted: "))
             l.delete_by_value(num)
         elif ch==8:
-            l.display()
+            l.reverse()
         elif ch==9:
+            l.display()
+        elif ch==10:
             print("Exiting....")
             break
         else:
