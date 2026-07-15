@@ -56,6 +56,26 @@ class LinkedList:
                 current=current.next
         if not found:
             print(f"{num} not found...")
+    def insert_at_position(self,num,pos):
+        new_node=Node(num)
+        if pos==1:
+            self.insert_at_beginning(num)
+            return
+        elif pos<1:
+            print("Invalid position")
+            return
+        else:
+            count=1
+            current=self.head
+            while count<pos-1 and current is not None:
+                current=current.next
+                count+=1
+            if current is None:
+                print("Invalid position")
+                return
+            new_node.next=current.next
+            current.next=new_node
+            print(f"{num} successfully added at position {pos}")
     def display(self):
         current=self.head
         print("Head-->",end='')
@@ -68,7 +88,7 @@ while True:
     try:
         line="="*40
         print(f"{line}\nWelcome to Linked List!\n{line}\n")
-        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete element from beginning\n4. Delete element from end\n5. Search Element\n6. View Linked List\n7. Exit")
+        print("1. Add Elements to the Beginning\n2. Add Elements to the End\n3. Delete element from beginning\n4. Delete element from end\n5. Search Element\n6. Insert at a position\n7. View Linked List\n8. Exit")
         ch=int(input("Enter choice: "))
         if ch==1:
             num=int(input("Enter number: "))
@@ -84,8 +104,12 @@ while True:
             num=int(input("Enter element to be searched: "))
             l.search(num)
         elif ch==6:
-            l.display()
+            num=int(input("Enter element to be inserted: "))
+            pos=int(input("Enter position: "))
+            l.insert_at_position(num,pos)
         elif ch==7:
+            l.display()
+        elif ch==8:
             print("Exiting....")
             break
         else:
