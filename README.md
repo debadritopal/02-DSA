@@ -31,6 +31,7 @@ I am building this repository while learning DSA step by step, focusing on under
 - Stack
 - Queue
 - Single Linked List
+- Double Linked List
 
 ## 🚧 Upcoming Topics
 - Trees
