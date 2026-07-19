@@ -32,9 +32,10 @@ I am building this repository while learning DSA step by step, focusing on under
 - Queue
 - Single Linked List
 - Double Linked List
+- Binary Tree
 
 ## 🚧 Upcoming Topics
-- Trees
+- Binary Search Trees
 - Graphs
 - Hash Tables
 - Heaps
