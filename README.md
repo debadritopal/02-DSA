@@ -33,9 +33,9 @@ I am building this repository while learning DSA step by step, focusing on under
 - Single Linked List
 - Double Linked List
 - Binary Tree
+- Binary Search Trees
 
 ## 🚧 Upcoming Topics
-- Binary Search Trees
 - Graphs
 - Hash Tables
 - Heaps
