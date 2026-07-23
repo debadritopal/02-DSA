@@ -34,11 +34,11 @@ I am building this repository while learning DSA step by step, focusing on under
 - Double Linked List
 - Binary Tree
 - Binary Search Trees
+- Heaps
 
 ## 🚧 Upcoming Topics
 - Graphs
 - Hash Tables
-- Heaps
 - Dynamic Programming
 - Greedy Algorithms
 - Backtracking
